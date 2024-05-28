@@ -52,14 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     resetButton.addEventListener('click', resetButtons);
 
     nextButton.addEventListener('click', () => {
-        nextSound.play();
         if (firstTime == true) {
+            notimeSound = new Audio('next.mp3');
             notimeSound.play();
             firstTime = false;
+        } else {
+            nextSound.play();
         }
         countdownStarted = true;
-        // No assign real time over sound (iOS workaround)
-        notimeSound = document.getElementById('notime-sound');
+        // Now assign real time over sound (iOS workaround)
+        notimeSound = new Audio('outtaTime.mp3');
         startCountdown();
     });
 
