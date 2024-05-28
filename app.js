@@ -18,12 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-button');
     let countdown = 15;
     let countdownInterval;
+    let countdownStarted = false;
 
     const resetButtons = () => {
         const buttons = container.getElementsByTagName('button');
         for (let button of buttons) {
             button.classList.remove('pressed');
         }
+        countdown = 15;
+        countdownTimer.textContent = countdown;
+        countdownStarted = false;
     };
 
     const startCountdown = () => {
@@ -31,11 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownTimer.textContent = countdown;
         clearInterval(countdownInterval);
         countdownInterval = setInterval(() => {
-            countdown -= 1;
+            if (countdownStarted) {
+                countdown -= 1;
+            }
             countdownTimer.textContent = countdown;
             if (countdown <= 0) {
                 clearInterval(countdownInterval);
                 notimeSound.play()
+                countdownStarted = false;
             }
         }, 1000);
     };
@@ -44,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextButton.addEventListener('click', () => {
         nextSound.play();
+        countdownStarted = true;
         startCountdown();
     });
 
