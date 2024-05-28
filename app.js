@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const clickSound = document.getElementById('click-sound');
     const notimeSound = document.getElementById('notime-sound');
+    const nextSound = document.getElementById('next-sound');
     const countdownTimer = document.getElementById('countdown-timer');
     const resetButton = document.getElementById('reset-button');
     const nextButton = document.getElementById('next-button');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetButton.addEventListener('click', resetButtons);
 
     nextButton.addEventListener('click', () => {
+        nextSound.play();
         startCountdown();
     });
 
