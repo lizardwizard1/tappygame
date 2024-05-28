@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('button-container');
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const alphabet = 'ABCDEFGHIJKLMNOPRSTW'; // Excluding Q, U, V, X, Y, Z
     const positions = [
-        {row: 0, col: 0}, {row: 0, col: 1}, {row: 0, col: 2}, {row: 0, col: 3}, {row: 0, col: 4}, {row: 0, col: 5}, {row: 0, col: 6}, {row:, // Top row
-        {row: 1, col: 7}, {row: 2, col: 7}, {row: 3, col: 7}, {row: 4, col: 7}, {row: 5, col: 7}, {row: 6, col: 7}, // Right column
-        {row: 7, col: 7}, {row: 7, col: 6}, {row: 7, col: 5}, {row: 7, col: 4}, {row: 7, col: 3}, {row: 7, col: 2}, {row: 7, col: 1}, {row: 7, col: 0}, // Bottom row
-        {row: 6, col: 0}, {row: 5, col: 0}, {row: 4, col: 0}, {row: 3, col: 0}, {row: 2, col: 0}, {row: 1, col: 0}  // Left column
+        {row: 0, col: 0}, {row: 0, col: 1}, {row: 0, col: 2}, {row: 0, col: 3}, {row: 0, col: 4}, {row: 0, col: 5}, // Top row
+        {row: 1, col: 5}, {row: 2, col: 5}, {row: 3, col: 5}, {row: 4, col: 5}, {row: 5, col: 5}, // Right column
+        {row: 5, col: 4}, {row: 5, col: 3}, {row: 5, col: 2}, {row: 5, col: 1}, {row: 5, col: 0}, // Bottom row
+        {row: 4, col: 0}, {row: 3, col: 0}, {row: 2, col: 0}, {row: 1, col: 0}  // Left column
     ];
 
     const clickSound = document.getElementById('click-sound');

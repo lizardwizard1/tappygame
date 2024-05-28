@@ -10,10 +10,10 @@ body {
 
 #button-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 80vw;
-  height: 80vh;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 60vw;
+  height: 60vh;
   gap: 1vw;
   position: relative;
 }
