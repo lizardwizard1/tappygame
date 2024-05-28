@@ -56,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         button.addEventListener('click', () => {
             if (!button.classList.contains('pressed')) {
-                button.classList.add('pressed');
-                clickSound.play();
+                if (countdown > 0) {
+                    button.classList.add('pressed');
+                    clickSound.play();
+                }
             }
         });
         container.appendChild(button);
