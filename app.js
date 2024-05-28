@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const clickSound = document.getElementById('click-sound');
     const notimeSound = document.getElementById('notime-sound');
+    notimeSound.volume = 0.50;
     const nextSound = document.getElementById('next-sound');
+    nextSound.volume = 0.30;
     const countdownTimer = document.getElementById('countdown-timer');
     const resetButton = document.getElementById('reset-button');
     const nextButton = document.getElementById('next-button');
