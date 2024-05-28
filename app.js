@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clickSound = document.getElementById('click-sound');
     const countdownTimer = document.getElementById('countdown-timer');
     const resetButton = document.getElementById('reset-button');
+    const nextButton = document.getElementById('next-button');
     let countdown = 15;
     let countdownInterval;
 
@@ -36,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     resetButton.addEventListener('click', resetButtons);
+
+    nextButton.addEventListener('click', () => {
+        startCountdown();
+    });
 
     alphabet.split('').forEach((letter, index) => {
         const button = document.createElement('button');
