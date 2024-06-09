@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Placeholder for real sound (iOS workaround)
     notimeSound.volume = 0.50;
     const nextSound = document.getElementById('next-sound');
-    nextSound.volume = 0.30;
+    nextSound.volume = 0.40;
     const countdownTimer = document.getElementById('countdown-timer');
     const resetButton = document.getElementById('reset-button');
     const nextButton = document.getElementById('next-button');
@@ -54,10 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', () => {
         if (firstTime == true) {
             notimeSound = new Audio('next.mp3');
+            notimeSound.volume = 0.40;
             notimeSound.play();
             firstTime = false;
         } else {
-            nextSound.play();
+            nextSound.pause(); // Stop the currently playing sound
+            nextSound.currentTime = 0; // Reset the audio to the beginning
+            nextSound.play(); // Play the new sound
         }
         countdownStarted = true;
         // Now assign real time over sound (iOS workaround)
