@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             firstTime = false;
         } else {
             nextSound.pause(); // Stop the currently playing sound
+            clickSound.pause();
             nextSound.currentTime = 0; // Reset the audio to the beginning
             nextSound.play(); // Play the new sound
         }
