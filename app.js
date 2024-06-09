@@ -21,12 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let countdownInterval;
     let countdownStarted = false;
     let firstTime = true
+    let lastClickedButton = null; // Variable to keep track of the last clicked button
 
     const resetButtons = () => {
         const buttons = container.getElementsByTagName('button');
         for (let button of buttons) {
             button.classList.remove('pressed');
         }
+        let lastClickedButton = null; // Variable to keep track of the last clicked button
         countdown = 15;
         countdownTimer.textContent = countdown;
         countdownStarted = false;
@@ -79,8 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!button.classList.contains('pressed')) {
                 if (countdown > 0) {
                     button.classList.add('pressed');
+                    lastClickedButton = button;
                     clickSound.play();
                 }
+            } else {
+                if (button === lastClickedButton) {
+                    // Toggle off the last clicked button
+                    button.classList.remove('pressed');
+                    lastClickedButton = null;
+                }  
             }
         });
         container.appendChild(button);
